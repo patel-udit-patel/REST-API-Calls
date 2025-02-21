@@ -51,7 +51,15 @@ public class HelloController {
 
     // Handle POST Request with Request Body
     @PostMapping("/post")
-    public String sayHello(@RequestBody UserDTO user) {
+    public String sayHelloWithUser(@RequestBody UserDTO user) {
         return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
+    }
+
+    //--------------------------------------------------------------------------------------
+
+    // Handle PUT Request with Path Variable & Query Parameter
+    @PutMapping("/put/{firstName}")
+    public String sayHelloWithPathAndQuery(@PathVariable String firstName, @RequestParam String lastName) {
+        return "Hello " + firstName + " " + lastName + " from BridgeLabz";
     }
 }
