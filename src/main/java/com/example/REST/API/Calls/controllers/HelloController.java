@@ -34,7 +34,15 @@ public class HelloController {
 
     // Handle GET Request with Query Parameter
     @GetMapping("/query")
-    public String sayHello(@RequestParam String name) {
+    public String sayHelloWithQuery(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
+
+    //------------------------------------------------------------------------------------
+
+    // Handle GET Request with Path Variable
+    @GetMapping("/param/{name}")
+    public String sayHelloWithParam(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
     }
 }
