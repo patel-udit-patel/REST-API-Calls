@@ -1,5 +1,6 @@
 package com.example.REST.API.Calls.controllers;
 
+import com.example.REST.API.Calls.UserDTO;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -44,5 +45,13 @@ public class HelloController {
     @GetMapping("/param/{name}")
     public String sayHelloWithParam(@PathVariable String name) {
         return "Hello " + name + " from BridgeLabz";
+    }
+
+    //------------------------------------------------------------------------------------
+
+    // Handle POST Request with Request Body
+    @PostMapping("/post")
+    public String sayHello(@RequestBody UserDTO user) {
+        return "Hello " + user.getFirstName() + " " + user.getLastName() + " from BridgeLabz";
     }
 }
