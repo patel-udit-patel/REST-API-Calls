@@ -29,4 +29,12 @@ public class HelloController {
     public String sayHelloDelete() {
         return "Hello from BridgeLabz - DELETE";
     }
+
+    //------------------------------------------------------------------------------------
+
+    // Handle GET Request with Query Parameter
+    @GetMapping("/query")
+    public String sayHello(@RequestParam String name) {
+        return "Hello " + name + " from BridgeLabz";
+    }
 }
